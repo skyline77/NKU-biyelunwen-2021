@@ -1,41 +1,40 @@
+\PassOptionsToPackage{quiet}{fontspec} % suppress the warnings
 \documentclass[zihao = -4, linespread = 1.5]{ctexart} % 12pt
+
+% 导入 preamble.tex
 \usepackage{docmute}
 \input{preamble}
 
 
 \begin{document}
+%   插入前2页
+%
 \pagenumbering{gobble} % 取消页码
 \includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover1.pdf} % 左 下 右 上
 \includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover2.pdf}
-
+%
 \pagenumbering{Roman}
+%
+%
 \begin{zhAbstract}
-此模板根据\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《南开大学本科毕业论文（设计）指导手册2018 》}（以下简称《指导手册》）的要求制作，这是目前最新的版本。
-希望此模板能帮助更多正在写论文的同学。
-由于作者专业的原因，本模板花较大篇幅展示了如何排版数学公式、定理和证明。如需要对别的内容进行排版（如代码、交换图、化学方程式等），也欢迎联系本人以对此模板进行扩充。
-最后，由于本人水平有限，有些地方仍有不足，欢迎指出，本人将会\sout{量力而为}尽力完善。
-联系方式：
-\begin{description}
-  \item[微信] \texttt{zp18102190105}
-  \item[QQ] \texttt{602795339}
-  \item[邮箱] \texttt{602795339@qq.com}
-\end{description}
+此模板根据\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《南开大学本科毕业论文（设计）指导手册2018 》}（以下简称《指导手册》）的要求制作，这是目前最新的要求。
+由于作者专业的原因，本模板花较大篇幅展示了如何排版数学公式、定理和证明。希望此模板能帮助更多正在写论文的同学。
 
-使用注意事项：
+使用方式：
 \begin{itemize}
-  \item 下载方式：
-    \begin{enumerate*}[label=(\arabic*)]
-      \item 百度网盘，
-      \item Github。
-    \end{enumerate*}
-    \item 给新手的使用教程：Bilibili。
-  \item 请使用XeLaTeX进行编译。
-  \item 若不希望将超链接上色，将\texttt{preamble.tex}中 
-            \texttt{\textbackslash usepackage\{hyperref\}}的\texttt{colorlinks}选项去掉（位于文件约190行）。
-  \item 需要自行在\texttt{cover1.docx}中制作封面并导出为PDF文件，替换 \href{./cover1.pdf}{\texttt{cover1.pdf}}。（不要使用作者的封面\blacksmiley{}）
+  \item 您可以下载文件（\href{https://github.com/skyline77/NKU-biyelunwen-2021}{\texttt{GitHub NKU-biyelunwen-2021}}），或者使用Overleaf上的模板（敬请期待）。
+  \item 请使用XeLaTeX进行编译，在Overleaf上切换编译器的方式见\href{https://www.overleaf.com/learn/how-to/Changing_compiler}{文章}。
+  \item 使用模板时，建议不要删除原来的内容，将其注释即可，以备日后需要。
+  \item 若不希望将超链接上色，将\texttt{preamble.tex}中导入\texttt{hyperref}的colorlinks选项去掉（位于文件约190行）。
+  \item 你需要自行在\texttt{cover1.docx}中制作封面并导出为\texttt{cover1.pdf}，以替换作者的封面。（不要使用作者的封面\blacksmiley{}）
 \end{itemize}
 
-最后，由于作者水平有限，本模板不能完全符合要求，但作者擅长推卸责任且不打算对此负责\smiley{}。
+最后，由于本人水平有限，有些地方仍有不足，欢迎指出，本人将会\sout{量力而为}尽力完善。联系方式：
+\begin{enumerate*}[label=(\arabic*)]
+   \item 微信：\texttt{zp18102190105}；
+  \item QQ：\texttt{602795339}；
+  \item 邮箱：\texttt{602795339@qq.com}。
+\end{enumerate*}
 \par\noindent\textbf{关键词：}南开大学毕业论文；\LaTeX；数学公式；定理环境；代码
 \end{zhAbstract}
 
@@ -102,15 +101,16 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 示例：此处是第\ref{sec:fundamental}节的第\ref{subsec:crossRef}小节，小节的标题是“\nameref{subsec:crossRef}”，
 位于文档的第~\pageref{subsec:crossRef} 页。% ~ 是不换行空格，防止“第”字出现在行末，“2页”出现在下一行。
 
-另外，你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
-示例：在下文中你可以看到\cref{tab:notation1}、\cref{fig:scatter}、
-\cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}、\cref{code:fibonacci}。使用传统的 \texttt{\textbackslash ref}还是
-较智能的 \texttt{\textbackslash cref}，留给使用者选择。
-
+你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
+示例：此处是\cref{sec:fundamental}的\cref{subsec:crossRef}，在下文中你可以看到\cref{fig:scatter}、
+\cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}和\cref{code:fibonacci}。
+然而，\texttt{\textbackslash cref}命令与cTeX 2.5.3及以下版本不兼容，它导致不影响使用的error。
+为了兼容Overleaf使用的2.5.3版本，我们仅在本示例中展示了该命令，而在 \texttt{main.tex} 文件中将本段注释，因此您的编译结果将不会包括本段。
+如您使用2.5.4及以上版本的cTeX，或可以接受不影响使用的error，则可以使用 \texttt{\textbackslash cref} 命令。
 
 
 \subsection{图片}
-\cref{fig:scatter} 插入了一个矢量图，经过放大也不会失真。个人的经验是，将图形输出为PDF格式，能够较好的支持中文。将图片输出为其它矢量格式时，可能会导致中文乱码。
+图~\ref{fig:scatter} 插入了一个矢量图，经过放大也不会失真。个人的经验是，将图形输出为PDF格式，能够较好的支持中文。将图片输出为其它矢量格式时，可能会导致中文乱码。
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=\textwidth]{picture/scatter.pdf}
@@ -123,20 +123,20 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 % 注意，若要在图表中的caption使用脚注，就要按这种方式，而不能直接在caption种使用 \footnote 命令
 % 详见 https://tex.stackexchange.com/questions/10181/using-footnote-in-a-figures-caption
 
-\cref{fig:left} 和\cref{fig:right} 是两张并排的图片。\cref{fig:WuHeQiLin} 含有4个子图。
+图~\ref{fig:left} 和图~\ref{fig:right} 是两张并排的图片。图~\ref{fig:WuHeQiLin} 含有4个子图。
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-  \includegraphics[width=0.95\textwidth]{picture/left.pdf}
-  \caption{公司最优生产速率}
+  \includegraphics[width=\textwidth]{picture/left.pdf}
+  \caption{某路径图}
   \label{fig:left} % 下面要空一格
 
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \centering
-  \includegraphics[width=0.95\textwidth]{picture/right.pdf}
-  \caption{公司的最优交易速率}
+  \includegraphics[width=\textwidth]{picture/right.pdf}
+  \caption{用颜色区分时间}
   \label{fig:right}
 \end{minipage}
 \end{figure}
@@ -179,7 +179,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 
 \clearpage
 \subsection{表格}
-\cref{tab:notation1} 用三线表的形式进行符号说明。
+表~\ref{tab:notation1} 用三线表的形式进行符号说明。
 \begin{table}[htbp]
 \centering
 \caption{符号表示1}
@@ -202,7 +202,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 \end{tabular}
 \end{table}
 
-\cref{tab:ZhangSan1} 也是三线表，但与前者不同，它是二维的，“姓名”和“学科”唯一决定了成绩。将其用\cref{tab:ZhangSan2} 展示可以更清晰的看到这一点。
+表~\ref{tab:ZhangSan1} 也是三线表，但与前者不同，它是二维的，“姓名”和“学科”唯一决定了成绩。将其用表~\ref{tab:ZhangSan2} 展示可以更清晰的看到这一点。
 
 \begin{table}[htbp] % htbp控制浮动，如果你不懂这是什么意思，照抄就OK
   \centering
@@ -240,7 +240,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 使用\texttt{\$\dots\$}得到行内公式，如$x \in [0, 1]$，$\int_{0}^{\pi} \sin x \, dx = 2$。
 
 \subsection{单行公式}\label{subsec:displayEqn}
-使用\texttt{equation}环境得到带编号公式，如\cref{eq:1} 所示。
+使用\texttt{equation}环境得到带编号公式，如式~\ref{eq:1} 所示。
 \begin{equation}\label{eq:1}
   \boldsymbol{\alpha}^2\sum_{j \in \mathbf{N}} b_{ij}
   \hat{y}_{j} = \sum_{j \in \mathbf{N}}
@@ -298,11 +298,11 @@ a_{31}x_1 &                   &&+ a_{33}x_3  &&+ a_{34}x_4 &&= y_3.
 \begin{subequations}
     \begin{align}
         h(x) &= \int \left(\frac{ f(x) + g(x) } {1 + f^{2}(x)} + \frac{1 + f(x)g(x)} { \sqrt{1 - \sin x} } \right) \, dx \label{eq:textUp} \\
-        \intertext{且可进一步化简为：}
+        \intertext{化简为}
         &= \int \frac{1 + f(x)} {1 + g(x)} \, dx - 2 \arctan(x - 2) \ \label{eq:textLow}
     \end{align}
 \end{subequations}
-注意到虽然中间有一行字，但\cref{eq:textUp} 和\cref{eq:textLow} 仍在同一个数学公式中。
+注意到虽然中间有一行字，但式~\ref{eq:textUp} 和式~\ref{eq:textLow} 仍在同一个数学公式中。
 
 
 \subsection{多行的单公式}
@@ -317,7 +317,7 @@ a_{31}x_1 &                   &&+ a_{33}x_3  &&+ a_{34}x_4 &&= y_3.
                      &= \frac{1}{\sec^{2}(\arctan x)}
   \end{aligned}
 \end{equation}
-注意到它只会对整个公式居中编号，而不像\cref{eq:align} 对每行都进行编号。
+注意到它只会对整个公式居中编号，而不像式~\ref{eq:align} 对每行都进行编号。
 更复杂的例子如下，我们令他们沿最左侧对齐，并且在后3行的行首加入了长度不等的空白。
 \begin{equation*}
   \begin{aligned}
@@ -331,7 +331,7 @@ a_{31}x_1 &                   &&+ a_{33}x_3  &&+ a_{34}x_4 &&= y_3.
   \end{aligned}
 \end{equation*}
 
-下面这种if-else情况可以用\texttt{case}环境生成：
+下面这种if-else情况可以用\texttt{cases}环境生成：
 \begin{equation}
   f(x)
     = \begin{cases}
@@ -386,7 +386,7 @@ a & b & c
 \end{definition}
 
 % 注意 \ref 两边的空格，会导致数字与两侧的汉字留有一定间距，更加美观
-从\cref{def:supremum} 容易看到，如果数集$S$有上（下）确界，则它的上（下）确界是唯一的。以上定义中sup是supermum的简写，而inf是infimum的简写。设$\beta = \sup S$，这包含两层意思：\begin{enumerate*}[label=(\roman*)]
+从定义~\ref{def:supremum} 容易看到，如果数集$S$有上（下）确界，则它的上（下）确界是唯一的。以上定义中sup是supermum的简写，而inf是infimum的简写。设$\beta = \sup S$，这包含两层意思：\begin{enumerate*}[label=(\roman*)]
 \item $\beta$是$S$的上界，即对任意$x \in S$，都成立$x\leqslant \beta$；
 \item $\beta$是$S$的所有上界中最小的，即对任意$\varepsilon > 0$，$\beta - \varepsilon$都不是$S$的上界，亦即对任意$\varepsilon > 0$，都存在$x_0 \in S$，使得$x_0 > \beta - \varepsilon$。
 \end{enumerate*}
@@ -436,7 +436,7 @@ $k$ converges to a constant as the number of firms ($N$) increases.
 
 
 \section{数字和单位}
-\cref{tab:number} 展示了一些数字和单位的写法，以及常见的错误写法。
+表~\ref{tab:number} 展示了一些数字和单位的写法，以及常见的错误写法。
 \begin{table}[htbp]
 \centering
 \caption{数字与单位示范}\label{tab:number}
@@ -459,7 +459,7 @@ $k$ converges to a constant as the number of firms ($N$) increases.
 
 \section{代码与伪代码}
 我们可以使用 \href{https://ctan.org/pkg/listings?lang=en}{\texttt{listings}} 排版代码。它支持多种语言，如C, C++, JAVA, Matlab, R, Python等，完整语言支持见\href{https://ctan.mirrors.hoobly.com/macros/latex/contrib/listings/listings.pdf}{文档}的2.4节（Programming languages）。
-\cref{code:fibonacci} 用Python实现了通过递推的方式计算斐波那契数列，以防止栈溢出。
+代码~\ref{code:fibonacci} 用Python实现了通过递推的方式计算斐波那契数列，以防止栈溢出。
 % 使用caption会生成标题，而用title则不会
 \begin{lstlisting}[language=Python, caption=计算斐波那契数列,label=code:fibonacci]
 def fibonacci(n):
@@ -477,7 +477,7 @@ def fibonacci(n):
 % \lstinputlisting[language=Python, caption=代码示例：计算斐波那契数列（Python）,label=code:fibonacci]{fibonacci.py}
 % 你也可以像这样引用本地文件，而不是直接将代码写在tex文件中
 
-我们可以使用 \href{https://ctan.org/pkg/algorithms}{\texttt{algorithms}} 包排版伪代码。\cref{algo:1} 将指数计算的复杂度由$O(n)$降到了$O(\log n)$。
+我们可以使用 \href{https://ctan.org/pkg/algorithms}{\texttt{algorithms}} 包排版伪代码。伪代码~\ref{algo:1} 将指数计算的复杂度由$O(n)$降到了$O(\log n)$。
 \begin{algorithm}
   \caption{加速指数计算}
   \label{algo:1}
