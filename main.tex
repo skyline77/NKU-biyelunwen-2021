@@ -27,6 +27,7 @@
   \item 使用模板时，建议不要删除原来的内容，将其注释即可，以备日后需要。
   \item 若不希望将超链接上色，将\texttt{preamble.tex}中导入\texttt{hyperref}的colorlinks选项去掉（位于文件约190行）。
   \item 你需要自行在\texttt{cover1.docx}中制作封面并导出为\texttt{cover1.pdf}，以替换作者的封面。（不要使用作者的封面\blacksmiley{}）
+  \item 推荐在 \href{https://www.tablesgenerator.com/}{Tables Generator} 网站制作表格，使用 \href{https://mathpix.com/ocr/}{Mathpix}\footnote{该软件经由阿里系某二手交易软件赋能后可发挥最大功效。} 软件书写数学公式，它们能很大地提升写作效率。
 \end{itemize}
 
 最后，由于本人水平有限，有些地方仍有不足，欢迎指出，本人将会\sout{量力而为}尽力完善。联系方式：
@@ -240,7 +241,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 使用\texttt{\$\dots\$}得到行内公式，如$x \in [0, 1]$，$\int_{0}^{\pi} \sin x \, dx = 2$。
 
 \subsection{单行公式}\label{subsec:displayEqn}
-使用\texttt{equation}环境得到带编号公式，如式~\ref{eq:1} 所示。
+使用\texttt{equation}环境得到带编号公式，如式~\eqref{eq:1} 所示。
 \begin{equation}\label{eq:1}
   \boldsymbol{\alpha}^2\sum_{j \in \mathbf{N}} b_{ij}
   \hat{y}_{j} = \sum_{j \in \mathbf{N}}
@@ -302,7 +303,7 @@ a_{31}x_1 &                   &&+ a_{33}x_3  &&+ a_{34}x_4 &&= y_3.
         &= \int \frac{1 + f(x)} {1 + g(x)} \, dx - 2 \arctan(x - 2) \ \label{eq:textLow}
     \end{align}
 \end{subequations}
-注意到虽然中间有一行字，但式~\ref{eq:textUp} 和式~\ref{eq:textLow} 仍在同一个数学公式中。
+注意到虽然中间有一行字，但式~\eqref{eq:textUp} 和式~\eqref{eq:textLow} 仍在同一个数学公式中。
 
 
 \subsection{多行的单公式}
@@ -317,7 +318,7 @@ a_{31}x_1 &                   &&+ a_{33}x_3  &&+ a_{34}x_4 &&= y_3.
                      &= \frac{1}{\sec^{2}(\arctan x)}
   \end{aligned}
 \end{equation}
-注意到它只会对整个公式居中编号，而不像式~\ref{eq:align} 对每行都进行编号。
+注意到它只会对整个公式居中编号，而不像式~\eqref{eq:align} 对每行都进行编号。
 更复杂的例子如下，我们令他们沿最左侧对齐，并且在后3行的行首加入了长度不等的空白。
 \begin{equation*}
   \begin{aligned}
