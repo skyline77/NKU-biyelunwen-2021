@@ -1,55 +1,58 @@
 \PassOptionsToPackage{quiet}{fontspec} % suppress the warnings
-\documentclass[zihao = -4, linespread = 1.5]{ctexart} % 12pt
 
-% 导入 preamble.tex
-\usepackage{docmute}
+\documentclass[zihao = -4, linespread = 1.5]{ctexart}
+
 \input{preamble}
 
-
 \begin{document}
-%   插入前2页
-%
-\pagenumbering{gobble} % 取消页码
-\includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover1.pdf} % 左 下 右 上
-\includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover2.pdf}
-%
-\pagenumbering{Roman}
-%
-%
-\begin{zhAbstract}
+\NKUInputCover % 插入封面 cover1.pdf 和 cover2.pdf
+
+
+\begin{NKUAbstractZh}
 此模板根据\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《南开大学本科毕业论文（设计）指导手册2018 》}（以下简称《指导手册》）的要求制作，这是目前最新的要求。
 由于作者专业的原因，本模板花较大篇幅展示了如何排版数学公式、定理和证明。希望此模板能帮助更多正在写论文的同学。
 
-使用方式：
+{\heiti 下载方式：}
 \begin{itemize}
-  \item 您可以下载文件（\href{https://github.com/skyline77/NKU-biyelunwen-2021}{\texttt{GitHub NKU-biyelunwen-2021}}），或者使用Overleaf上的模板（敬请期待）。
-  \item 请使用XeLaTeX进行编译，在Overleaf上切换编译器的方式见\href{https://www.overleaf.com/learn/how-to/Changing_compiler}{文章}。
-  \item 使用模板时，建议不要删除原来的内容，将其注释即可，以备日后需要。
-  \item 若不希望将超链接上色，将\texttt{preamble.tex}中导入\texttt{hyperref}的colorlinks选项去掉（位于文件约190行）。
-  \item 你需要自行在\texttt{cover1.docx}中制作封面并导出为\texttt{cover1.pdf}，以替换作者的封面。（不要使用作者的封面\blacksmiley{}）
-  \item 推荐在 \href{https://www.tablesgenerator.com/}{Tables Generator} 网站制作表格，使用 \href{https://mathpix.com/ocr/}{Mathpix}\footnote{该软件经由阿里系某二手交易软件赋能后可发挥最大功效。} 软件书写数学公式，它们能很大地提升写作效率。
+  \item 你可以在 \href{https://github.com/skyline77/NKU-biyelunwen-2021}{\texttt{GitHub NKU-biyelunwen-2021}} 下载文件，在本地使用。
+            若无法登录GitHub，也可以在\href{https://pan.baidu.com/s/1RnDI7RqW5qRcyaw8ZpYMTw}{百度网盘}下载，提取码：\texttt{p4qv}，但更新速度可能较慢。
+  \item 在Overleaf上使用模板（敬请期待）。
 \end{itemize}
 
-最后，由于本人水平有限，有些地方仍有不足，欢迎指出，本人将会\sout{量力而为}尽力完善。联系方式：
+{\heiti 使用建议：}
+\begin{itemize}
+  \item 请使用 XeLaTeX 进行编译\footnote{在Overleaf上切换编译器的方式见\href{https://www.overleaf.com/learn/how-to/Changing_compiler}{文章}。}。
+  \item 使用模板时，建议不要删除原来的内容，将其注释即可，以备日后需要。
+  \item 若不希望将超链接上色，将\texttt{preamble.tex}中导入\texttt{hyperref}的colorlinks选项去掉（位于文件约 190 行）。
+  \item 你需要自行在\texttt{cover1.docx}中制作封面并导出为\texttt{cover1.pdf}，以替换作者的封面。\CJKunderline{不要使用作者的封面\blacksmiley{}}
+  \item 推荐在 \href{https://www.tablesgenerator.com/}{Tables Generator} 网站制作表格，使用 \href{https://mathpix.com/ocr/}{Mathpix}\footnote{该软件经由阿里系某二手交易软件赋能后可发挥最大功效。} 软件书写数学公式，它们能很大地提升写作效率。
+  \item LaTeX 会自动在英文与中文直接加入括号，但这并不总是有效，例如在使用 \texttt{\textbackslash href} 功能时。此时需要你手动加入括号。
+\end{itemize}
+
+最后，由于本人水平有限，模板仍存在不足，欢迎指出，本人将会\CJKsout{量力而为}尽力完善。联系方式：
 \begin{enumerate*}[label=(\arabic*)]
    \item 微信：\texttt{zp18102190105}；
   \item QQ：\texttt{602795339}；
   \item 邮箱：\texttt{602795339@qq.com}。
 \end{enumerate*}
 \par\noindent\textbf{关键词：}南开大学毕业论文；\LaTeX；数学公式；定理环境；代码
-\end{zhAbstract}
+\end{NKUAbstractZh}
 
-\begin{enAbstract}
+
+
+\begin{NKUAbstractEn}
 If you skip the previous abstract in Chinese and come here for help, this template is not for you\smiley{}.
 \par\noindent\textbf{Keywords: }\LaTeX{} template; impatient author
-\end{enAbstract}
+\end{NKUAbstractEn}
 
-% 生成目录。注意要连续两次编译才能正确生成目录
-\tableofcontents
 
+
+\tableofcontents % 生成目录。注意要连续两次编译才能正确生成目录
 \newpage
-
 \pagenumbering{arabic} % 改用阿拉伯数字页码
+
+
+
 \section{基础}\label{sec:fundamental}
 \subsection{节、小节、小小节、段落}
 \subsubsection{这是小小节1.1.1}
@@ -102,12 +105,12 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 示例：此处是第\ref{sec:fundamental}节的第\ref{subsec:crossRef}小节，小节的标题是“\nameref{subsec:crossRef}”，
 位于文档的第~\pageref{subsec:crossRef} 页。% ~ 是不换行空格，防止“第”字出现在行末，“2页”出现在下一行。
 
-% 你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
-% 示例：此处是\cref{sec:fundamental}的\cref{subsec:crossRef}，在下文中你可以看到\cref{fig:scatter}、
-% \cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}和\cref{code:fibonacci}。
-% 然而，\texttt{\textbackslash cref}命令与cTeX 2.5.3及以下版本不兼容，它导致不影响使用的error。
-% 为了兼容Overleaf使用的2.5.3版本，我们仅在本示例中展示了该命令，而在 \texttt{main.tex} 文件中将本段注释，因此您的编译结果将不会包括本段。
-% 如您使用2.5.4及以上版本的cTeX，或可以接受不影响使用的error，则可以使用 \texttt{\textbackslash cref} 命令。
+你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
+示例：此处是\cref{sec:fundamental}的\cref{subsec:crossRef}，在下文中你可以看到\cref{fig:scatter}、
+\cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}和\cref{code:fibonacci}。
+然而，\texttt{\textbackslash cref}命令与CTeX 2.5.3及以下版本不兼容，它导致不影响使用的error。
+为了兼容Overleaf使用的2.5.3版本，我们仅在本示例中展示了该命令，而在 \texttt{main.tex} 文件中将本段注释，因此您的编译结果将不会包括本段。
+如您使用2.5.4及以上版本的CTeX，或可以接受不影响使用的error，则可以使用 \texttt{\textbackslash cref} 命令。
 
 
 \subsection{图片}
@@ -120,7 +123,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 \end{figure}
 
 \footnotetext{你可能注意到，图片的标题在下方，而表格的标题在下方。这么做的原因可以见 \href{https://tex.stackexchange.com/questions/3243/why-should-a-table-caption-be-placed-above-the-table}
-{StackExchange}。}
+{Stack Exchange}。}
 % 注意，若要在图表中的caption使用脚注，就要按这种方式，而不能直接在caption种使用 \footnote 命令
 % 详见 https://tex.stackexchange.com/questions/10181/using-footnote-in-a-figures-caption
 
@@ -180,7 +183,8 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 
 \clearpage
 \subsection{表格}
-表~\ref{tab:notation1} 用三线表的形式进行符号说明。
+表~\ref{tab:notation1} 用三线表的形式进行符号说明。若完整的表格过长，可以像表~\ref{tab:notationlong} 那样放在附录，在正文仅保留关键的%
+符号。
 \begin{table}[htbp]
 \centering
 \caption{符号表示1}
@@ -262,7 +266,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
   x &= y \times z  \\
   dz &= x + y
 \end{align}
-若想用下一级编号，可以用\texttt{subequation}环境包围\texttt{align}，或其他多公式环境\footnote{有关微分算子应该用直立体还是斜体，可以见\href{https://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator}{Stack Exchange}的讨论。}：
+若想用下一级编号，可以用\texttt{subequation}环境包围\texttt{align}，或其他多公式环境\footnote{有关微分算子应该用直立体还是斜体，可以见 \href{https://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator}{Stack Exchange} 的讨论。}：
 \begin{subequations}\label{eq:subEqn}
   \begin{align}
   x &= y \times z  \\
@@ -516,17 +520,10 @@ def fibonacci(n):
 %\end{center}
 
 
-\clearpage
-%\appendix % 该行以后的章节都无编号
-%\ctexset{section/aftername = \hspace{6pt}} % 恢复间距
-% 由于NK应该是只需要一个目录，因此采用了下面的方法，而不是真正的 appendix
 
-\setcounter{secnumdepth}{0} % 抑制section的编号
-\section{\texorpdfstring{附\quad 录}{附录}}
-%\section{附\quad 录} % 正常情况下应该这么写，但为了兼容PDF书签功能，使用了上面的写法
+\NKUAppendixSection % 目录节
 附录内容一般包括正文中不便列出的冗长公式推导、符号说明（含缩写）、计算机程序等。
 （不过按照毕业论文指导手册的意思，只能有一个附录吗。）
-
 
 \begin{center}
 \begin{longtable}{|l|l|l|}
@@ -610,11 +607,49 @@ One & abcdef ghjijklmn & 123.456778 \\
 \end{longtable}
 \end{center}
 
+表~\ref{tab:notationlong} 展示了较长的符号说明。为了指定表格的宽度，我们使用了 \texttt{tabularx} 环境，而不是普通的 \texttt{table} 环境
+\begin{table}[htbp]
+    \caption{较长的符号说明表格}\label{tab:notationlong}
+    \begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
+    \toprule
+      \underline{Indices: } \\
+      $K$ & number of products ($k \in\{1,...,K\}$)  \\
+      $T$ & number of periods ($t \in\{1,...,T\}$)\\
+
+      \underline{Parameters: } \\
+      $\delta_k$ & target $\delta$-service level for product $k$ \\
+      $c_t$      & production capacity in period $t$ \\
+      $c^r_t$    & remanufacturing capacity in period $t$  \\
+      $hc_k$    & holding cost of product $k$ per unit and period   \\
+      $hc_k$     & holding cost of product $k$ per unit and period   \\
+      $oc$   & overtime costs per unit   \\
+      $M_{kt}$   & bignumber for product $k$ in period $t$\\
+      $pc_{k}$   & production cost of product $k$ per unit\\
+      $pc^r_{k}$ & remanufacturing cost of product $k$ per unit\\
+      $sc_{k}$   &  setup cost of product $k$\\
+      \underline{Random variables: } \\
+      $BL_{kt}$  & backlog of product $k$ at the end of period $t$\\
+      $D_{kt}$   & external demand of product $k$ in period $t$  \\
+      $I_{kt}$   & net inventory of product $k$ at the end of period $t$  \\
+      $I^r_{kt}$ & net inventory of returns of product $k$ at the end of period $t$  \\
+      $IP_{kt}$   & physical inventory of product $k$ at the end of period $t$\\
+      $IP^r_{kt}$   & physical inventory of recoverables at the end of period $t$\\
+      $R_{kt}$   &  returns of product $k$ in period $t$\\
+      $SF^r_{kt}$   &  shortfall of recoverables of product $k$ in period $t$\\
+      \underline{Decision variables: } \\
+      $q_{kt}$   &  production quantity of product $k$ in period $t$\\
+      $q^r_{kt}$   &  remanufacturing quantity of product $k$ in period $t$  \\
+      $o_{t}$   &  amount of overtime for production in period $t$  \\
+      $o^r_{t}$   &  amount of overtime for remanufacturing in period $t$\\
+      \bottomrule
+     \end{tabularx}
+    \end{table}
+
 
 \clearpage
 \begin{thebibliography}{99}\label{sec:bib}
 \addtolength{\itemsep}{-1.5ex} % 缩小行间距，可选
-\bibitem{PangQingShan}庞青山.论大学学科组织及其特色.高等理科教育，2005，63（5）：1\~{}3.\footnote{本页的参考文献除最后一条，均来源于\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《指导手册》}。最后一条意在演示使用url。}
+\bibitem{PangQingShan}庞青山.论大学学科组织及其特色.高等理科教育，2005，63（5）：1\~{}3\footnote{本页的参考文献除最后一条，均来源于\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《指导手册》}。最后一条意在演示使用url。}.
 \bibitem{KohYW}Koh Y W, Lai C S, Loh K, \emph{et al}. Growth of bismuth sulfide mamowire using bismuth trisxanthate single sourceprecursors. Chem Mater, 2003, 15(24): 4544\~{}4554.
 \bibitem{LiMing}李明.物理学.北京：科学出版社，1977，58\~{}62.
 \bibitem{Dupont}Dupont B. Bone marrow transplantation in severe combined immunodeficiency with an unrelated MLC compatible donor. In：White H J, Smith R, eds. Proceedings of the Third Annual Meeting of the International Society for Experimental Hematology. Houston：International Society for Experimental Hematology, 1974.44\~{}46．
@@ -626,10 +661,9 @@ One & abcdef ghjijklmn & 123.456778 \\
 
 
 
-\clearpage
-\section{\texorpdfstring{致\quad 谢}{致谢}}
-%\section{致\quad 谢} % 正常情况下应该这么写，但为了兼容PDF书签功能，使用了上面的写法
+\NKUThanksSection
 感谢使用本模板。
 
 Thanks for using this template.
+
 \end{document} 

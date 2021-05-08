@@ -1,5 +1,13 @@
 \usepackage{nag} % 检测宏包是否过期
 
+%
+%原来我把学号打错了，道个歉。。
+
+
+
+
+
+
 
 
 
@@ -34,18 +42,6 @@
 
 
 %%%%%%%%%%%%%%%%%%
-% 摘要环境
-%%%%%%%%%%%%%%%%%%
-\newenvironment{zhAbstract}
-{\renewcommand{\abstractname}{\zihao{4} 摘\quad 要}\begin{abstract}\zihao{-4}}
-{ \end{abstract}\newpage}
-
-\newenvironment{enAbstract}
-{\renewcommand{\abstractname}{\zihao{4} Abstract}\begin{abstract}\zihao{-4}}
-{\end{abstract}\newpage}
-
-
-%%%%%%%%%%%%%%%%%%
 % 数学公式、定理环境
 %%%%%%%%%%%%%%%%%%
 \usepackage{amsmath, amsfonts, amsthm}
@@ -68,7 +64,7 @@
 \theoremstyle{remark}
 \newtheorem{remark}{\indent \normalfont \heiti 注}
 
-\renewcommand\qedsymbol{$\blacksquare$}
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 %\numberwithin{equation}{section} % 公式根据 section 编号
 %\renewcommand{\proofname}{\indent \normalfont \heiti 证} % 已经在ctex中设置了
 
@@ -77,7 +73,7 @@
 
 
 %%%%%%%%%%%%%%%%%%
-% 图、表、标题
+% 图表
 %%%%%%%%%%%%%%%%%%
 \usepackage[inline]{enumitem} % 可以自定义列表编号，提供行内列表
 \usepackage[labelsep=quad]{caption} % 设置表格标题间距 用space太窄 quad太宽 MD
@@ -87,10 +83,12 @@
 \usepackage{booktabs} % 三线表
 \usepackage{diagbox} % 对表头用斜线分割
 \usepackage{multirow} % 纵向合并单元格
+%\usepackage{tabu} % 该包已经停止维护
+%\usepackage{tabularx} % 为与hyperref兼容，在200行导入
 \usepackage{longtable} % 跨页表格
 \usepackage{multirow} % 表格跨行单元格
 \usepackage{graphicx} % 插入图片
-\usepackage{float} % 没用上
+\usepackage{float}
 
 
 
@@ -129,8 +127,9 @@
 %%%%%%%%%%%%%%%%%%
 \usepackage{siunitx} % 单位、数字
 \usepackage{pdfpages} % 插入PDF文件, 用于插入封面
-\usepackage[normalem]{ulem} % 删除线
-\usepackage{soul} % 下划线
+%\usepackage{soul} % 广义文本装饰，但删除线无法用于中文
+%\usepackage[normalem]{ulem} % 删除线，在中文会出现重心下移
+\usepackage{xeCJKfntef} % 支持中文的删除线
 \usepackage{wasysym} % emoji
 \usepackage{xurl} % 允许超链接随时换行
 %\usepackage[htt]{hyphenat} % 允许 texttt 换行。 wdnmd 会导致二十几个warning
@@ -220,3 +219,56 @@
  \crefformat{remark}{#2注~#1#3}
  \crefformat{algorithm}{#2伪代码~#1#3}
  \crefformat{listing}{#2代码~#1#3}
+ 
+
+
+
+%%%%%%%%%%%%%%%%%%
+% 自定义 命令和环境
+%%%%%%%%%%%%%%%%%%
+
+\newcommand{\NKUInputCover}{  % 插入封面
+    \pagenumbering{gobble} % 取消页码
+    \includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover/cover1.pdf} % 左 下 右 上
+    \includepdf[pages=1,pagecommand={},width=\textwidth,trim=28mm 25.4mm 28mm 25.4mm, clip]{cover/cover2.pdf}
+    \pagenumbering{arabic}
+}
+
+
+\newenvironment{NKUAbstractZh} % 中文摘要
+{
+    \renewcommand{\abstractname}{\zihao{4} 摘\quad 要}
+    \pagenumbering{Roman}
+    \begin{abstract}\zihao{-4}
+}
+{
+    \end{abstract}
+    \newpage
+}
+
+\newenvironment{NKUAbstractEn} % 英文摘要
+{
+    \renewcommand{\abstractname}{\zihao{4} Abstract}
+    \begin{abstract}\zihao{-4}
+}
+{
+    \end{abstract}
+    \newpage
+}
+
+\newcommand{\NKUAppendixSection}{ % 附录节
+    \clearpage
+    % 写法一：默认的 \appendix 命令
+    %\appendix % 该行以后的章节都无编号
+    %\ctexset{section/aftername = \hspace{6pt}} % 恢复间距
+    %
+    % 写法二：由于NK应该是只需要一个目录，因此采用了下面的方法
+    \setcounter{secnumdepth}{0} % 抑制section的编号
+    \section{\texorpdfstring{附\quad 录}{附录}} % 正常情况下应该是\section{附\quad 录}，但为了兼容PDF书签功能这么写
+}
+
+
+\newcommand{\NKUThanksSection}{ % 致谢节
+   \clearpage
+    \section{\texorpdfstring{致\quad 谢}{致谢}} % 正常情况下应该是\section{致\quad 谢}，但为了兼容PDF书签功能这么写
+}
