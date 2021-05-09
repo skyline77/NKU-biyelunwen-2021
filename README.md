@@ -5,7 +5,7 @@
 
 请下载并阅读《2021 南开大学本科毕业论文模板示例》文件，在摘要页有更详细的使用说明，在该文件中提供了更多示例。
 
-### 对从[NKU-thesis-template-2020](https://github.com/Tr0py/NKU-thesis-template-2020)迁移过来的用户须知：
+### 对从 [NKU-thesis-template-2020](https://github.com/Tr0py/NKU-thesis-template-2020) 迁移过来的用户须知：
 - 原模板基于 book 类制作，最高级标题为“章（Chapter）”。本模板基于 ctexart 类制作，最高级标题为“节（Section）”，因此你需要将所有标题都降一级。
 - 原模板使用 biblatex 管理文献，需要使用 bib 文件，但提供了复杂的引用功能。本模板的文献管理使用起来较简单，但也只提供了引用序号（如 \[1\]）的功能。
 - 原模板在 LaTeX 中制作封面，本模板需要你自己制作封面（cover1.pdf）。推荐使用本模板的 cover1.docx 文件制作封面，与教务处提供的反人类的[南开大学本科毕业论文（设计）相关表格](http://jwc.nankai.edu.cn/bylwwsjw/list.htm)相比，它使用表格重新制作了该封面，因此具有以下优点：
