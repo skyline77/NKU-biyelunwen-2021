@@ -96,7 +96,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 \end{enumerate}
 
 \subsection{脚注、文献引用和交叉引用}\label{subsec:crossRef}
-使用 \texttt{\textbackslash footnote}输入脚注\footnote{这是脚注。 }。使用 \texttt{\textbackslash cite}引用文献\cite{PangQingShan}（引用之前需要在\nameref{sec:bib}中定义）。
+使用 \texttt{\textbackslash footnote}输入脚注\footnote{这是脚注。 }。使用 \texttt{\textbackslash cite}引用文献，如 \cite{PangQingShan}、\cite{HuGang, LiMing, Dupont}、\cite{url}（引用之前需要在\nameref{sec:bib}中定义）。
 
 交叉引用，即我们使用 \texttt{\textbackslash label}命令在某处标记，以后再用 \texttt{\textbackslash ref}命令引用该标记。
 使用交叉引用功能的好处是， \texttt{\textbackslash ref}命令引用的内容会随着 \texttt{\textbackslash label}命令所在的位置、环境
@@ -657,7 +657,7 @@ One & abcdef ghjijklmn & 123.456778 \\
 \bibitem{HuGang}胡  刚.蛋白质深度分析以及基因的进化模型：[博士学位论文].天津:南开大学，2005.
 \bibitem{YaoGuangQi}姚光起.一种氧气镐材料的制备方法.中国专利.ZL891056088，1980-07-03.
 \bibitem{GB3100}中华人民共和国国家技术监督局.GB3100--3102.中华人民共和国国家标准.北京：中国标准出版社，1994-11-01.
-\bibitem{url}SREC Trade, New jersey srec market, 2019, \url{https://www.srectrade.com/srec markets/new jersey} (accessed 2019-02-13).
+\bibitem[test]{url}SREC Trade, New jersey srec market, 2019, \url{https://www.srectrade.com/srec markets/new jersey} (accessed 2019-02-13). % 方括号中的可选参数表示，使用 \cite{url} 时 生成的是 [urlTest} 而不是[8]
 \end{thebibliography}
 
 
