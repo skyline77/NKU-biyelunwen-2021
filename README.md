@@ -1,6 +1,6 @@
 # NKU-biyelunwen-2021
 
-目前版本：v1.2
+
 ### 使用方式
 - 下载所有文件（Code --> Download Zip），使用本地编译器编译
 - 使用 Overleaf 的模板：[NKU-毕业论文-2021](https://www.overleaf.com/latex/templates/nku-bi-ye-lun-wen-2021/svxybkzxyycp) 在线编程
