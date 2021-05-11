@@ -104,12 +104,12 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 示例：此处是第\ref{sec:fundamental}节的第\ref{subsec:crossRef}小节，小节的标题是“\nameref{subsec:crossRef}”，
 位于文档的第~\pageref{subsec:crossRef} 页。% ~ 是不换行空格，防止“第”字出现在行末，“2页”出现在下一行。
 
-% 你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
-% 示例：此处是\cref{sec:fundamental}的\cref{subsec:crossRef}，在下文中你可以看到\cref{fig:scatter}、
-% \cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}和\cref{code:fibonacci}。
-% 然而，\texttt{\textbackslash cref}命令与CTeX 2.5.3及以下版本不兼容，它导致不影响使用的error。
-% 为了兼容Overleaf使用的2.5.3版本，我们仅在本示例中展示了该命令，而在 \texttt{main.tex} 文件中将本段注释，因此您的编译结果将不会包括本段。
-% 如您使用2.5.4及以上版本的CTeX，或可以接受不影响使用的error，则可以使用 \texttt{\textbackslash cref} 命令。
+%你也可以使用 \texttt{cleveref}包的 \texttt{\textbackslash cref}功能，本模板对该命令进行了汉化。
+%示例：此处是\cref{sec:fundamental}的\cref{subsec:crossRef}，在下文中你可以看到\cref{fig:scatter}、
+%\cref{eq:1}、\cref{def:supremum}、\cref{thm:monotone}、\cref{algo:1}和\cref{code:fibonacci}。
+%然而，\texttt{\textbackslash cref}命令与CTeX 2.5.3及以下版本不兼容。
+%为了兼容Overleaf使用的2.5.3版本，我们仅在本示例中展示了该命令，而将 \texttt{main.tex} 中的本段、 \texttt{preamble.tex}中的相关内容注释。您的编译结果将不会包括本段。
+%如您使用2.5.4及以上版本的CTeX，或可以接受不影响使用的error，则可以使用 \texttt{\textbackslash cref} 命令。
 
 
 \subsection{图片}
@@ -126,7 +126,7 @@ If you skip the previous abstract in Chinese and come here for help, this templa
 % 注意，若要在图表中的caption使用脚注，就要按这种方式，而不能直接在caption种使用 \footnote 命令
 % 详见 https://tex.stackexchange.com/questions/10181/using-footnote-in-a-figures-caption
 
-图~\ref{fig:left} 和图~\ref{fig:right} 是两张并排的图片。图~\ref{fig:WuHeQiLin} 含有4个子图。
+图~\ref{fig:left} 和图~\ref{fig:right} 是两张并排的图片。图~\ref{fig:photos} 含有4个子图。
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.48\textwidth}
@@ -148,34 +148,33 @@ If you skip the previous abstract in Chinese and come here for help, this templa
      \centering
      \begin{subfigure}[b]{.5\linewidth - 1mm}
          \centering
-         \includegraphics[width=\textwidth,trim=0 12 0 12,clip]{picture/和平之师.jpg} % 这张图比其他图高，需要裁剪
-         \caption{和平之师}
-         \label{fig:HePingZhiShi}
+         \includegraphics[width=\textwidth]{picture/冰雪大世界.jpg} % 裁剪：,trim=0 12 0 12,clip
+         \caption{冰雪大世界}
+         \label{fig:冰雪大世界}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{.5\linewidth - 1mm}
          \centering
-         \includegraphics[width=\textwidth]{picture/至莫里森.jpg}
-         \caption{至莫里森}
-         \label{fig:ZhiMoLiSen}
+         \includegraphics[width=\textwidth]{picture/高中の夕阳.jpg}
+         \caption{高中の夕阳}
+         \label{fig:高中夕阳}
      \end{subfigure}
 
      \begin{subfigure}[b]{.5\linewidth - 1mm}
          \centering
-         \includegraphics[width=\textwidth]{picture/剑来.jpg}
-         \caption{剑来}
-         \label{fig:JianLai}
+         \includegraphics[width=\textwidth]{picture/八里台桥.jpg}
+         \caption{八里台桥}
+         \label{fig:八里台桥}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{.5\linewidth - 1mm}
          \centering
-         \includegraphics[width=\textwidth]{picture/敬呼吸.jpg}
-         \caption{敬呼吸}
-         \label{fig:JingHuXi}
+         \includegraphics[width=\textwidth]{picture/某同学.jpg}
+         \caption{作者得不到的同学}
+         \label{fig:某同学}
      \end{subfigure}
-
-        \caption{乌合麒麟部分作品}
-        \label{fig:WuHeQiLin}
+        \caption{作者拍的照片}
+        \label{fig:photos}
 \end{figure}
 
 
@@ -606,16 +605,16 @@ One & abcdef ghjijklmn & 123.456778 \\
 \end{longtable}
 \end{center}
 
-表~\ref{tab:notationlong} 展示了较长的符号说明。为了指定表格的宽度，我们使用了 \texttt{tabularx} 环境，而不是普通的 \texttt{table} 环境
+表~\ref{tab:notationlong} 展示了较长的符号说明，并将类似的符号归类。为了指定表格的宽度，我们使用了 \texttt{tabularx} 环境，而不是普通的 \texttt{table} 环境
 \begin{table}[htbp]
     \caption{较长的符号说明表格}\label{tab:notationlong}
-    \begin{tabularx}{\textwidth}{p{0.22\textwidth}X}
+    \begin{tabularx}{\textwidth}{p{0.2\textwidth}X}
     \toprule
-      \underline{Indices: } \\
+      \CJKunderline{索引}\\
       $K$ & number of products ($k \in\{1,...,K\}$)  \\
       $T$ & number of periods ($t \in\{1,...,T\}$)\\
 
-      \underline{Parameters: } \\
+      \CJKunderline{参数} \\
       $\delta_k$ & target $\delta$-service level for product $k$ \\
       $c_t$      & production capacity in period $t$ \\
       $c^r_t$    & remanufacturing capacity in period $t$  \\
@@ -626,7 +625,7 @@ One & abcdef ghjijklmn & 123.456778 \\
       $pc_{k}$   & production cost of product $k$ per unit\\
       $pc^r_{k}$ & remanufacturing cost of product $k$ per unit\\
       $sc_{k}$   &  setup cost of product $k$\\
-      \underline{Random variables: } \\
+      \CJKunderline{随机变量} \\
       $BL_{kt}$  & backlog of product $k$ at the end of period $t$\\
       $D_{kt}$   & external demand of product $k$ in period $t$  \\
       $I_{kt}$   & net inventory of product $k$ at the end of period $t$  \\
@@ -635,7 +634,7 @@ One & abcdef ghjijklmn & 123.456778 \\
       $IP^r_{kt}$   & physical inventory of recoverables at the end of period $t$\\
       $R_{kt}$   &  returns of product $k$ in period $t$\\
       $SF^r_{kt}$   &  shortfall of recoverables of product $k$ in period $t$\\
-      \underline{Decision variables: } \\
+      \CJKunderline{决策变量}\\
       $q_{kt}$   &  production quantity of product $k$ in period $t$\\
       $q^r_{kt}$   &  remanufacturing quantity of product $k$ in period $t$  \\
       $o_{t}$   &  amount of overtime for production in period $t$  \\
@@ -646,17 +645,18 @@ One & abcdef ghjijklmn & 123.456778 \\
 
 
 \clearpage
-\setcounter{secnumdepth}{0} % 抑制后续Sectioin的编号
+\setcounter{secnumdepth}{0} % 抑制section的编号
+
 \begin{thebibliography}{99}\label{sec:bib}
 \addtolength{\itemsep}{-1.5ex} % 缩小行间距，可选
-\bibitem{PangQingShan}庞青山.论大学学科组织及其特色.高等理科教育，2005，63（5）：1\~{}3\footnote{本页的参考文献除最后一条，均来源于\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《指导手册》}。最后一条意在演示使用url。}.
+\bibitem{PangQingShan}庞青山.论大学学科组织及其特色.高等理科教育，2005，63（5）：1\~{}3.
 \bibitem{KohYW}Koh Y W, Lai C S, Loh K, \emph{et al}. Growth of bismuth sulfide mamowire using bismuth trisxanthate single sourceprecursors. Chem Mater, 2003, 15(24): 4544\~{}4554.
 \bibitem{LiMing}李明.物理学.北京：科学出版社，1977，58\~{}62.
 \bibitem{Dupont}Dupont B. Bone marrow transplantation in severe combined immunodeficiency with an unrelated MLC compatible donor. In：White H J, Smith R, eds. Proceedings of the Third Annual Meeting of the International Society for Experimental Hematology. Houston：International Society for Experimental Hematology, 1974.44\~{}46．
 \bibitem{HuGang}胡  刚.蛋白质深度分析以及基因的进化模型：[博士学位论文].天津:南开大学，2005.
 \bibitem{YaoGuangQi}姚光起.一种氧气镐材料的制备方法.中国专利.ZL891056088，1980-07-03.
 \bibitem{GB3100}中华人民共和国国家技术监督局.GB3100--3102.中华人民共和国国家标准.北京：中国标准出版社，1994-11-01.
-\bibitem[test]{url}SREC Trade, New jersey srec market, 2019, \url{https://www.srectrade.com/srec markets/new jersey} (accessed 2019-02-13). % 方括号中的可选参数表示，使用 \cite{url} 时 生成的是 [urlTest} 而不是[8]
+\bibitem{url}SREC Trade, New jersey srec market, 2019, \url{https://www.srectrade.com/srec markets/new jersey} (accessed 2019-02-13)\footnote{除本条外，所列的参考文献均来源于\href{http://jwc.nankai.edu.cn/bylwwsjw/list.htm}{《指导手册》}。本条意在演示使用url。}.
 \end{thebibliography}
 
 
