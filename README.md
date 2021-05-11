@@ -3,6 +3,10 @@
 - 下载所有文件（Code --> Download Zip），使用本地编译器编译
 - 使用 Overleaf 的模板：[NKU-毕业论文-2021](https://www.overleaf.com/latex/templates/nku-bi-ye-lun-wen-2021/svxybkzxyycp) 在线编程
 
+### 注意事项
+- 本模板在 TeX Live 2020 环境下可以运行，但不保证更低版本或其它环境下的运行。
+- 若您在本地环境无法编译该模板，可以在 [Overleaf](https://www.overleaf.com/latex/templates/nku-bi-ye-lun-wen-2021/svxybkzxyycp) 上在线编程。
+
 请下载并阅读《2021 南开大学本科毕业论文模板示例》文件，在摘要页有更详细的使用说明，在该文件中提供了更多示例。
 
 ### 对从 [NKU-thesis-template-2020](https://github.com/Tr0py/NKU-thesis-template-2020) 迁移过来的用户须知：
